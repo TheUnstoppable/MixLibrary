@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MixLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:MixLibrary.MixClass">
+            <summary>
+            Actions to save and load MIX packages.
+            </summary>
+        </member>
+        <member name="M:MixLibrary.MixClass.CreateMIX">
+            <summary>
+            Create an empty MIX package.
+            </summary>
+            <returns>Fresh instance of <see cref="T:MixLibrary.MixPackageClass"/></returns>
+        </member>
+        <member name="M:MixLibrary.MixClass.Load(System.Uri,System.Boolean)">
+            <summary>
+            Load MIX package from a remote host.
+            </summary>
+            <param name="url">Remote URL to download package.</param>
+            <param name="IgnoreCRCMismatches">Ignore integrity checks when parsing file datas.</param>
+            <returns>Downloaded MIX package.</returns>
+        </member>
+        <member name="M:MixLibrary.MixClass.Load(System.String,System.Boolean)">
+            <summary>
+            Load MIX package from a directory.
+            </summary>
+            <param name="FileLocation">Location to MIX package.</param>
+            <param name="IgnoreCRCMismatches">Ignore integrity checks when parsing file datas.</param>
+            <returns>MIX Package loaded from specified location.</returns>
+        </member>
+        <member name="M:MixLibrary.MixClass.Load(System.IO.Stream,System.Boolean)">
+            <summary>
+            Load MIX package from a stream.
+            </summary>
+            <param name="Stream"><see cref="T:System.IO.Stream"/> object containing MIX package.</param>
+            <param name="IgnoreCRCMismatches">Ignore integrity checks when parsing file datas.</param>
+            <returns>MIX Package loaded from stream.</returns>
+        </member>
+        <member name="M:MixLibrary.MixClass.Load(System.Byte[],System.Boolean)">
+            <summary>
+            Load MIX package from array of bytes.
+            </summary>
+            <param name="Data">Byte array containing the bytes of a MIX package.</param>
+            <param name="IgnoreCRCMismatches">Ignore integrity checks when parsing file datas.</param>
+            <returns>MIX Package loaded from byte array.</returns>
+        </member>
+        <member name="M:MixLibrary.MixClass.Save(MixLibrary.MixPackageClass,System.String)">
+            <summary>
+            Save the specified MIX package to the specified file.
+            </summary>
+            <param name="Package">Instance of <see cref="T:MixLibrary.MixPackageClass"/> to write into a file.</param>
+            <param name="FileLocation">Location to destination file.</param>
+        </member>
+        <member name="M:MixLibrary.MixClass.Save(MixLibrary.MixPackageClass)">
+            <summary>
+            Save the specified MIX package as a array of bytes
+            </summary>
+            <param name="Package">Instance of <see cref="T:MixLibrary.MixPackageClass"/> to write into a byte array.</param>
+            <returns>MIX Package data as array of bytes.</returns>
+        </member>
+        <member name="M:MixLibrary.MixClass.Save(MixLibrary.MixPackageClass,System.IO.Stream@)">
+            <summary>
+            Save the specified MIX package to a Stream.
+            </summary>
+            <param name="Package">Instance of <see cref="T:MixLibrary.MixPackageClass"/> to write into the stream.</param>
+            <param name="Stream">Output stream containing MIX data.</param>
+        </member>
+        <member name="T:MixLibrary.MixFileClass">
+            <summary>
+            A piece of file contained in <see cref="T:MixLibrary.MixPackageClass"/>
+            </summary>
+        </member>
+        <member name="P:MixLibrary.MixFileClass.FileName">
+            <summary>
+            File name.
+            </summary>
+        </member>
+        <member name="P:MixLibrary.MixFileClass.Data">
+            <summary>
+            Array of bytes containing the file content.
+            </summary>
+        </member>
+        <member name="P:MixLibrary.MixFileClass.FileCRC">
+            <summary>
+            CRC of File Name.
+            </summary>
+        </member>
+        <member name="P:MixLibrary.MixFileClass.DataCRC">
+            <summary>
+            CRC of File Data.
+            </summary>
+        </member>
+        <member name="M:MixLibrary.MixFileClass.Save(System.String,System.String)">
+            <summary>
+            Save this file to a folder with optionally different name.
+            </summary>
+            <param name="Folder">Folder to save this file.</param>
+            <param name="File">Optional file name. Leave null to use default.</param>
+        </member>
+        <member name="T:MixLibrary.MixFileCollection">
+            <summary>
+            Alternative class for <see cref="T:System.Collections.Generic.List`1"/>.
+            </summary>
+        </member>
+        <member name="P:MixLibrary.MixPackageClass.Files">
+            <summary>
+            Collection of files stored in this package.
+            </summary>
+        </member>
+        <member name="P:MixLibrary.MixPackageClass.FileCount">
+            <summary>
+            Total files stored by this package.
+            </summary>
+        </member>
+        <member name="M:MixLibrary.MixPackageClass.AddFile(System.String)">
+            <summary>
+            Adds the specified file into MIX.
+            </summary>
+            <param name="FileLoc">Location to source file.</param>
+        </member>
+        <member name="M:MixLibrary.MixPackageClass.Extract(System.String)">
+            <summary>
+            Extract all files in this package to a folder.
+            </summary>
+            <param name="Folder">Destionation folder to extract all files.</param>
+        </member>
+    </members>
+</doc>
