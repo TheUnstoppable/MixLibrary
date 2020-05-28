@@ -14,6 +14,9 @@ using System.Linq;
 
 namespace MixLibrary
 {
+    /// <summary>
+    /// A piece of file contained in <see cref="MixPackageClass"/>
+    /// </summary>
     public struct MixFileClass
     {
         /// <summary>
