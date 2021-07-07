@@ -84,25 +84,22 @@
             <param name="IgnoreCRCMismatches">Ignore integrity checks when parsing file datas.</param>
             <returns>MIX Package loaded from byte array.</returns>
         </member>
-        <member name="M:MixLibrary.MixPackageClass.Save(MixLibrary.MixPackageClass,System.String)">
+        <member name="M:MixLibrary.MixPackageClass.Save(System.String)">
             <summary>
             Save the specified MIX package to the specified file.
             </summary>
-            <param name="Package">Instance of <see cref="T:MixLibrary.MixPackageClass"/> to write into a file.</param>
             <param name="FileLocation">Location to destination file.</param>
         </member>
-        <member name="M:MixLibrary.MixPackageClass.Save(MixLibrary.MixPackageClass)">
+        <member name="M:MixLibrary.MixPackageClass.Save">
             <summary>
             Save the specified MIX package as a array of bytes
             </summary>
-            <param name="Package">Instance of <see cref="T:MixLibrary.MixPackageClass"/> to write into a byte array.</param>
             <returns>MIX Package data as array of bytes.</returns>
         </member>
-        <member name="M:MixLibrary.MixPackageClass.Save(MixLibrary.MixPackageClass,System.IO.Stream@)">
+        <member name="M:MixLibrary.MixPackageClass.Save(System.IO.Stream@)">
             <summary>
             Save the specified MIX package to a Stream.
             </summary>
-            <param name="Package">Instance of <see cref="T:MixLibrary.MixPackageClass"/> to write into the stream.</param>
             <param name="Stream">Output stream containing MIX data.</param>
         </member>
         <member name="P:MixLibrary.MixPackageClass.Files">
