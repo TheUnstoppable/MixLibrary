@@ -1,6 +1,6 @@
 ﻿/*  
     MIX Package/File Parser
-    Copyright (c) 2020 Unstoppable
+    Copyright (c) 2021 Unstoppable
     You can redistribute or modify this code under GNU General Public License v3.0.
     The permission given to run this code in a closed source project modified.
     But, you have to release the source code using this library must be released.
@@ -8,13 +8,20 @@
 */
 
 
-using System;
 using System.IO;
 
 namespace MixLibrary
 {
-    public struct MixPackageClass
+    /// <summary>
+    /// Represents a deserialized MIX file, which is a storage method like ZIP, seen on most of the Westwood games.
+    /// </summary>
+    public partial class MixPackageClass
     {
+        internal MixPackageClass()
+        {
+            Files = new MixFileCollection();
+        }
+
         /// <summary>
         /// Collection of files stored in this package.
         /// </summary>
