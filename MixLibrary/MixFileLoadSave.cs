@@ -114,17 +114,12 @@ namespace MixLibrary
                                     $"MIX CRC is mismatching with API calculated CRC.\nFile Name: {File.FileName}");
                             }
 
+                            var pos = Stream.Position;
+                            Stream.Position = (int)File.ContentOffset;
+                            File.Data = Stream.Read((int)File.ContentLength);
+                            Stream.Position = pos;
+
                             Package.Files[i] = File;
-                        }
-
-                        foreach (MixFileClass File in Package.Files.OrderByDescending(x => x.ContentOffset))
-                        {
-                            Stream.Position = (int) File.ContentOffset;
-                            int Index = Package.Files.FindIndex(x => x.FileCRC == File.FileCRC);
-
-                            var tmpfile = Package.Files[Index];
-                            tmpfile.Data = Stream.Read((int) File.ContentLength);
-                            Package.Files[Index] = tmpfile;
                         }
                     }
                     else
